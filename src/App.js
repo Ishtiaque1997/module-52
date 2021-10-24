@@ -12,6 +12,7 @@ import NotFound from './Components/NotFound/NotFound'
 import Header from './Components/Hedaer/Header';
 import FriendDetail from './Components/FriendDetail/FriendDetail';
 import Culture from './Components/Culture/Culture';
+import PostDetails from './Components/PostDetails/PostDetails';
 function App() {
   return (
     <div className="App">
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route exact path="/about/culture">
               <Culture></Culture>
+          </Route>
+          <Route path="/post/:id">
+            <PostDetails></PostDetails>
           </Route>
           <Route path="/friend/:friendId">
            <FriendDetail></FriendDetail>
