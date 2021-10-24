@@ -11,6 +11,7 @@ import About from './Components/About/About';
 import NotFound from './Components/NotFound/NotFound'
 import Header from './Components/Hedaer/Header';
 import FriendDetail from './Components/FriendDetail/FriendDetail';
+import Culture from './Components/Culture/Culture';
 function App() {
   return (
     <div className="App">
@@ -27,8 +28,11 @@ function App() {
           <Route path='/friends'>
              <Friends></Friends>
           </Route>
-          <Route path='/about'>
+          <Route exact path='/about'>
                <About></About>
+          </Route>
+          <Route exact path="/about/culture">
+              <Culture></Culture>
           </Route>
           <Route path="/friend/:friendId">
            <FriendDetail></FriendDetail>
