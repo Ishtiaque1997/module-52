@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 
 const FriendDetail = () => {
  const {friendId}=useParams();
@@ -11,6 +11,10 @@ const FriendDetail = () => {
   .then(res=>res.json())
   .then(data=>setFriend(data))
  },[])
+ const history=useHistory();
+ const handleSeeFriend=()=>{
+   history.push('/friends')
+ }
  return (
   <div>
    <h5>Detail of {friendId} </h5>
@@ -18,6 +22,7 @@ const FriendDetail = () => {
    <h4>{friend.email}</h4>
    <h6>{friend.phone}</h6>
    <p>{friend.company?.name}</p>
+   <button onClick={handleSeeFriend}>See all friends</button>
   </div>
  );
 };
